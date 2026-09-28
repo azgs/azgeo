@@ -1,0 +1,9 @@
+# Normalize line endings for text files
+* text=auto
+
+# Binary files: never alter
+*.pmtiles binary
+*.png binary
+*.jpg binary
+*.docx binary
+*.pdf binary

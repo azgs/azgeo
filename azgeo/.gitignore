@@ -1,0 +1,18 @@
+# Source geodatabases and exports stay on the SDE / network share, not in this repository
+*.gdb/
+*.gdb.zip
+*.sde
+*.gpkg
+
+# Build scratch files
+__pycache__/
+*.pyc
+stage.gpkg
+
+# Operating system and editor clutter
+.DS_Store
+Thumbs.db
+desktop.ini
+~$*
+*.tmp
+.vscode/

@@ -1,0 +1,304 @@
+{
+ "field": "Symbol",
+ "symbols": {
+  "001.001.001": {
+   "label": "Contact",
+   "note": "",
+   "description": "Contact-Identity and existence certain, location accurate",
+   "count": 10649,
+   "layers": [
+    {
+     "type": "stroke",
+     "width": 0.4309,
+     "color": "rgb(0,0,0)",
+     "opacity": 1.0,
+     "dash": null
+    }
+   ]
+  },
+  "002.001.001": {
+   "label": "Fault",
+   "note": "",
+   "description": "Fault (generic; vertical, subvertical, or high-angle; or unknown or unspecified orientation or sense of slip)-Identity and existence certain, location accurate",
+   "count": 4239,
+   "layers": [
+    {
+     "type": "stroke",
+     "width": 1.08,
+     "color": "rgb(0,0,0)",
+     "opacity": 1.0,
+     "dash": null
+    }
+   ]
+  },
+  "002.002.001": {
+   "label": "Normal fault",
+   "note": "Ball and bar on downthrown block",
+   "description": "Normal fault-Identity and existence certain, location accurate. Ball and bar on downthrown block",
+   "count": 271,
+   "layers": [
+    {
+     "type": "stroke",
+     "width": 1.08,
+     "color": "rgb(0,0,0)",
+     "opacity": 1.0,
+     "dash": null
+    },
+    {
+     "type": "marker",
+     "graphics": [
+      {
+       "d": "M 1.26 4.024 C 1.26 4.192 1.229 4.358 1.164 4.508 C 1.099 4.658 1.009 4.791 0.896 4.909 C 0.781 5.02 0.65 5.109 0.498 5.174 C 0.347 5.24 0.186 5.27 0.014 5.27 C -0.156 5.27 -0.321 5.24 -0.472 5.174 C -0.624 5.109 -0.755 5.02 -0.868 4.909 C -0.977 4.791 -1.066 4.658 -1.134 4.508 C -1.199 4.358 -1.234 4.192 -1.234 4.024 C -1.234 3.872 -1.205 3.73 -1.155 3.602 C -1.103 3.467 -1.031 3.351 -0.942 3.245 C -0.857 3.142 -0.752 3.053 -0.633 2.979 C -0.509 2.907 -0.378 2.855 -0.234 2.829 L -0.234 -0.0 L 0.271 -0.0 L 0.271 2.829 C 0.415 2.855 0.545 2.907 0.661 2.979 C 0.781 3.053 0.887 3.142 0.977 3.245 C 1.064 3.351 1.136 3.467 1.184 3.602 C 1.236 3.73 1.26 3.872 1.26 4.024 L 1.26 4.024 Z",
+       "fill": "rgb(0,0,0)"
+      }
+     ],
+     "placement": "center",
+     "interval": null,
+     "bbox": [
+      -1.234,
+      -0.0,
+      1.26,
+      5.27
+     ]
+    }
+   ]
+  },
+  "002.008.001": {
+   "label": "Thrust fault",
+   "note": "Sawteeth on upper plate",
+   "description": "Thrust fault (1st option)-Identity and existence certain, location accurate. Sawteeth on upper (tectonically higher) plate",
+   "count": 104,
+   "layers": [
+    {
+     "type": "stroke",
+     "width": 1.08,
+     "color": "rgb(0,0,0)",
+     "opacity": 1.0,
+     "dash": null
+    },
+    {
+     "type": "marker",
+     "graphics": [
+      {
+       "d": "M 2.862 0.0 L 0.021 4.666 L -2.863 0.0 L 2.862 0.0 Z",
+       "fill": "rgb(0,0,0)"
+      }
+     ],
+     "placement": "along",
+     "interval": 33.1654,
+     "bbox": [
+      -2.863,
+      0.0,
+      2.862,
+      4.666
+     ]
+    }
+   ]
+  },
+  "002.008.007": {
+   "label": "Thrust fault, concealed",
+   "note": "Sawteeth on upper plate",
+   "description": "Thrust fault (1st option)-Identity and existence certain, location concealed. Sawteeth on upper (tectonically higher) plate",
+   "count": 1,
+   "layers": [
+    {
+     "type": "stroke",
+     "width": 1.08,
+     "color": "rgb(0,0,0)",
+     "opacity": 1.0,
+     "dash": [
+      1.5874,
+      2.3811,
+      1.5874,
+      2.3811,
+      1.5874,
+      2.3811,
+      7.115,
+      2.3811,
+      1.5874,
+      2.3811,
+      1.5874,
+      2.3811,
+      1.5874,
+      2.3811
+     ]
+    },
+    {
+     "type": "marker",
+     "graphics": [
+      {
+       "d": "M 2.862 0.0 L 0.021 4.666 L -2.863 0.0 L 2.862 0.0 Z",
+       "fill": "rgb(0,0,0)"
+      }
+     ],
+     "placement": "along",
+     "interval": 33.3071,
+     "bbox": [
+      -2.863,
+      0.0,
+      2.862,
+      4.666
+     ]
+    }
+   ]
+  },
+  "002.010.001": {
+   "label": "Detachment fault",
+   "note": "Hachures on upper plate",
+   "description": "Detachment fault (sense of slip unspecified) (1st option)-Identity and existence certain, location accurate. Hachures on upper plate Detachment fault (sense of slip unspecified)",
+   "count": 91,
+   "layers": [
+    {
+     "type": "stroke",
+     "width": 1.08,
+     "color": "rgb(0,0,0)",
+     "opacity": 1.0,
+     "dash": null
+    },
+    {
+     "type": "marker",
+     "graphics": [
+      {
+       "d": "M 1.429 0.004 L 2.111 0.004 L 2.111 3.535 L 1.429 3.535 L 1.429 0.004 Z M -2.113 0.004 L -1.432 0.004 L -1.432 3.535 L -2.113 3.535 L -2.113 0.004 Z",
+       "fill": "rgb(0,0,0)"
+      }
+     ],
+     "placement": "along",
+     "interval": 33.1654,
+     "bbox": [
+      -2.113,
+      0.004,
+      2.111,
+      3.535
+     ]
+    }
+   ]
+  },
+  "002.010.007": {
+   "label": "Detachment fault, concealed",
+   "note": "Hachures on upper plate",
+   "description": "Detachment fault (sense of slip unspecified) (1st option)-Identity and existence certain, location concealed. Hachures on upper plate",
+   "count": 21,
+   "layers": [
+    {
+     "type": "stroke",
+     "width": 1.08,
+     "color": "rgb(0,0,0)",
+     "opacity": 1.0,
+     "dash": [
+      1.5874,
+      2.3811,
+      1.5874,
+      2.3811,
+      1.5874,
+      2.3811,
+      7.115,
+      2.3811,
+      1.5874,
+      2.3811,
+      1.5874,
+      2.3811,
+      1.5874,
+      2.3811
+     ]
+    },
+    {
+     "type": "marker",
+     "graphics": [
+      {
+       "d": "M 1.429 0.004 L 2.111 0.004 L 2.111 3.535 L 1.429 3.535 L 1.429 0.004 Z M -2.113 0.004 L -1.432 0.004 L -1.432 3.535 L -2.113 3.535 L -2.113 0.004 Z",
+       "fill": "rgb(0,0,0)"
+      }
+     ],
+     "placement": "along",
+     "interval": 33.3071,
+     "bbox": [
+      -2.113,
+      0.004,
+      2.111,
+      3.535
+     ]
+    }
+   ]
+  },
+  "002.010.033": {
+   "label": "Listric fault at head of detachment fault",
+   "note": "Ticks on upper plate",
+   "description": "Listric fault at head of detachment fault (sense of slip unspecified)-Identity and existence certain, location accurate. Ticks on upper plate",
+   "count": 185,
+   "layers": [
+    {
+     "type": "stroke",
+     "width": 1.08,
+     "color": "rgb(0,0,0)",
+     "opacity": 1.0,
+     "dash": null
+    },
+    {
+     "type": "marker",
+     "graphics": [
+      {
+       "d": "M -0.343 -0.026 L 0.348 -0.026 L 0.348 3.516 L -0.343 3.516 L -0.343 -0.026 Z",
+       "fill": "rgb(0,0,0)"
+      }
+     ],
+     "placement": "along",
+     "interval": 33.1654,
+     "bbox": [
+      -0.343,
+      -0.026,
+      0.348,
+      3.516
+     ]
+    }
+   ]
+  },
+  "002.010.039": {
+   "label": "Listric fault at head of detachment fault, concealed",
+   "note": "Ticks on upper plate",
+   "description": "Listric fault at head of detachment fault (sense of slip unspecified)-Identity and existence certain, location concealed. Ticks on upper plate",
+   "count": 2,
+   "layers": [
+    {
+     "type": "stroke",
+     "width": 1.08,
+     "color": "rgb(0,0,0)",
+     "opacity": 1.0,
+     "dash": [
+      1.5874,
+      2.3811,
+      1.5874,
+      2.3811,
+      1.5874,
+      2.3811,
+      7.115,
+      2.3811,
+      1.5874,
+      2.3811,
+      1.5874,
+      2.3811,
+      1.5874,
+      2.3811
+     ]
+    },
+    {
+     "type": "marker",
+     "graphics": [
+      {
+       "d": "M -0.343 -0.026 L 0.348 -0.026 L 0.348 3.516 L -0.343 3.516 L -0.343 -0.026 Z",
+       "fill": "rgb(0,0,0)"
+      }
+     ],
+     "placement": "along",
+     "interval": 33.3071,
+     "bbox": [
+      -0.343,
+      -0.026,
+      0.348,
+      3.516
+     ]
+    }
+   ]
+  }
+ }
+}

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Geologic Map of Arizona | Arizona Geological Survey</title>
+  <meta name="description" content="Interactive geologic map of Arizona showing geologic units and faults, from the Arizona Geological Survey.">
+  <link rel="stylesheet" href="vendor/maplibre-gl-4.7.1/maplibre-gl.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#map-start">Skip to map</a>
+  <a class="skip-link" href="#info">Skip to map information and legends</a>
+
+  <header>
+  <div class="ua-bar">
+    <a href="https://www.arizona.edu/" class="ua-bar__ua">The University of Arizona</a>
+    <a href="https://www.azgs.arizona.edu/" class="ua-bar__unit">Arizona Geological Survey</a>
+  </div>
+
+  <div class="brand">
+    <div class="container">
+      <a href="https://www.azgs.arizona.edu/" class="brand__link">
+        <!-- If img/azgs.png is ever missing, the text version below shows instead. -->
+        <img src="img/azgs.png" alt="University of Arizona Science: Arizona Geological Survey, geosciences serving Arizona since 1887" class="brand__logo"
+             onerror="this.hidden=true; this.nextElementSibling.hidden=false;">
+        <span class="brand__text" hidden>
+          <span class="brand__kicker">UA Science</span>
+          <span class="brand__name">Arizona Geological Survey</span>
+          <span class="brand__tag">Geosciences serving Arizona since 1887</span>
+        </span>
+      </a>
+    </div>
+  </div>
+  </header>
+
+  <main class="container" id="map-start" tabindex="-1">
+    <h1 class="visually-hidden">Geologic Map of Arizona</h1>
+
+    <div class="map-frame">
+      <div id="map" role="region" aria-label="Geologic map. Use arrow keys to pan, plus and minus to zoom, and Enter to identify the unit at the center crosshair."></div>
+      <div class="crosshair" aria-hidden="true"></div>
+      <div id="hover-box" class="hover-box" aria-hidden="true" hidden></div>
+      <div id="highlight-chip" class="highlight-chip" hidden>
+        <span class="highlight-chip__swatch"></span>
+        <span>Showing <strong id="highlight-name"></strong></span>
+        <button type="button" id="highlight-clear">Show all units</button>
+      </div>
+      <div id="map-error" class="map-error" role="alert" hidden></div>
+      <p id="sr-live" class="visually-hidden" aria-live="polite"></p>
+    </div>
+
+    <section id="info" class="info" aria-labelledby="info-h" tabindex="-1">
+      <h2 id="info-h">Information</h2>
+      <dl class="terms">
+        <div><dt>Geologic Units</dt><dd>A volume of rock that can be identified using distinct characteristics.</dd></div>
+        <div><dt>Faults</dt><dd>A crack within the Earth's crust.</dd></div>
+        <div><dt>Geologic Maps</dt><dd>Detailed geology reports and maps published by the Arizona Geological Survey.</dd></div>
+      </dl>
+
+      <div class="info__sources">
+        <h3>Data Sources</h3>
+        <ul class="sources">
+          <li>Geology data derived from the Geologic Map of Arizona</li>
+          <li>Geologic maps from the <a href="https://data.azgs.arizona.edu/">AZGS Document Repository</a></li>
+        </ul>
+        <p id="data-status" class="status"></p>
+      </div>
+
+      <div class="info__legends">
+        <h3 id="legends-h">Legends</h3>
+        <p>Select a button to view that legend.</p>
+        <div class="legend-buttons" role="group" aria-labelledby="legends-h">
+          <button type="button" class="legend-btn" data-open="dlg-units" aria-haspopup="dialog">Geologic Units</button>
+          <button type="button" class="legend-btn" data-open="dlg-faults" aria-haspopup="dialog">Faults</button>
+          <button type="button" class="legend-btn" data-open="dlg-maps" aria-haspopup="dialog">Geologic Maps</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p><a href="https://www.arizona.edu/information-security-privacy">University Information Security and Privacy</a></p>
+      <p class="disclaimer">The maps, reports, and other information and content on this website are provided as a public service
+        for informational purposes only. Accuracy is not guaranteed, and the information contained or linked on this website
+        should not be relied on except as general information. The University makes no warranties or representations of any kind.</p>
+      <p class="copyright">&copy; Arizona Board of Regents</p>
+    </div>
+  </footer>
+
+  <!-- Legend dialogs -->
+  <dialog id="dlg-units" class="dlg" aria-labelledby="dlg-units-h">
+    <div class="dlg__head">
+      <h2 id="dlg-units-h">Geologic Units</h2>
+      <button type="button" class="dlg__close" data-close aria-label="Close">&times;</button>
+    </div>
+    <div class="dlg__body">
+      <p class="hint" id="units-hint">Youngest at top. Choose "Show on map" to highlight where a unit occurs.</p>
+      <label class="search">
+        <span class="visually-hidden">Filter geologic units</span>
+        <input type="search" id="legend-search" placeholder="Filter by name, age, label or description" autocomplete="off" autofocus aria-describedby="legend-count">
+      </label>
+      <div class="table-wrap">
+        <table class="unit-table">
+          <thead><tr><th scope="col"><span class="visually-hidden">Color</span></th><th scope="col">Unit</th><th scope="col">Name and description</th><th scope="col">Age</th><th scope="col"><span class="visually-hidden">Map</span></th></tr></thead>
+          <tbody id="legend"></tbody>
+        </table>
+      </div>
+      <p id="legend-count" class="visually-hidden" aria-live="polite"></p>
+      <p id="legend-empty" class="hint" hidden>No units match that filter.</p>
+    </div>
+  </dialog>
+
+  <dialog id="dlg-faults" class="dlg dlg--narrow" aria-labelledby="dlg-faults-h">
+    <div class="dlg__head">
+      <h2 id="dlg-faults-h">Faults and Contacts</h2>
+      <button type="button" class="dlg__close" data-close aria-label="Close">&times;</button>
+    </div>
+    <div class="dlg__body">
+      <ul class="line-legend" id="line-legend"></ul>
+    </div>
+  </dialog>
+
+  <dialog id="dlg-maps" class="dlg dlg--narrow" aria-labelledby="dlg-maps-h">
+    <div class="dlg__head">
+      <h2 id="dlg-maps-h">Geologic Maps</h2>
+      <button type="button" class="dlg__close" data-close aria-label="Close">&times;</button>
+    </div>
+    <div class="dlg__body">
+      <p>Outlines of detailed geologic maps from the AZGS Document Repository will appear here once that layer is connected.
+         Until then, browse maps at the <a href="https://data.azgs.arizona.edu/">AZGS Document Repository</a>.</p>
+    </div>
+  </dialog>
+
+  <template id="layers-template">
+    <button type="button" class="layers-ctrl__toggle" aria-expanded="false" aria-controls="layers-panel" title="Layers">
+      <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M12 3 2 8l10 5 10-5z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="m2 12 10 5 10-5M2 16l10 5 10-5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+      <span class="visually-hidden">Layers</span>
+    </button>
+    <div class="layers-ctrl__panel" id="layers-panel" hidden>
+      <fieldset>
+        <legend>Basemap</legend>
+        <label><input type="radio" name="basemap" value="usgsTopo" checked> Topographic</label>
+        <label><input type="radio" name="basemap" value="usgsImagery"> Imagery</label>
+        <label><input type="radio" name="basemap" value="usgsRelief"> Shaded relief</label>
+        <label><input type="radio" name="basemap" value="osm"> Streets</label>
+      </fieldset>
+      <fieldset>
+        <legend>Overlays</legend>
+        <label><input type="checkbox" id="lyr-units" checked> Geologic units</label>
+        <label class="opacity">
+          <span>Opacity</span>
+          <input type="range" id="op-units" min="0" max="100" value="75" aria-label="Geologic units opacity">
+          <output id="op-units-val">75%</output>
+        </label>
+        <label><input type="checkbox" id="lyr-lines" checked> Faults and contacts</label>
+      </fieldset>
+    </div>
+  </template>
+
+  <script src="vendor/maplibre-gl-4.7.1/maplibre-gl.js"></script>
+  <script src="vendor/pmtiles-3.2.1/pmtiles.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
